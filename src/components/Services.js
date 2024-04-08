@@ -3,58 +3,76 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
 
-const services = [
+// Importez les images
+import HTML5Icon from '../assets/html5-icon.png';
+import CSS3Icon from '../assets/css3-icon.png';
+import JavaScriptIcon from '../assets/javascript-icon.png';
+
+const skills = [
   {
-    name: 'UI/UX Design',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, excepturi adipisci nulla quasi.',
-    link: 'Learn more',
+    name: 'HTML5',
+    description: 'Connaissances balises sémantiques et des principes de structuration des pages web.',
+    icon: HTML5Icon,
+    link: 'En savoir plus',
   },
   {
-    name: 'Web Development',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, excepturi adipisci nulla quasi.',
-    link: 'Learn more',
+    name: 'CSS3',
+    description: 'Compétences  en stylisation et mise en forme de pages web avec CSS et les préprocesseurs comme Sass ou Less.',
+    icon: CSS3Icon,
+    link: 'En savoir plus',
   },
   {
-    name: 'Web Mobile',
-    description: 'Lorem ipsum dolor sit amet adipisicing elit. Nostrum, excepturi adipisci nulla quasi psum dolor sit amet adipisicing elit. Nostrum, excepturi adipisci nulla quasi.',
-    link: 'Learn more',
+    name: 'JavaScript',
+    description: 'Connaissances en concepts fondamentaux de JavaScript ainsi que des frameworks modernes comme React, Angular ou Vue.js.',
+    icon: JavaScriptIcon,
+    link: 'En savoir plus',
   },
+  // Ajoutez d'autres compétences avec leurs images ici
 ];
 
 const Services = () => {
   return (
-    <section className='section' id='services'>
+    <motion.section 
+      className='section'
+      id='services'
+      variants={fadeIn('left', 0.5)} 
+      initial='hidden'
+      whileInView={'show'}
+      viewport={{ once: false, amount: 0.3 }}
+    >
+      <style>{`
+        .skill-icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+        }
+
+        .skill-icon:hover {
+          transform: scale(1.1);
+        }
+      `}</style>
+      
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row'>
-          {       }
-          <motion.div
-          variants={fadeIn('left',0.5)}
-          initial='hidden'
-          whileInView={'show'}
-          viewport={{ once: false, amount:0.3 }}
-           className='flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0'
-           >
-
-           </motion.div>
-          
-          
-         
-
-          <div className='flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0'>
-            <h2 className='h2 text-accent mb-6'>Ce que je fais </h2>
+          <div className='flex-1'>
+            <h2 className='h2 text-accent mb-6'>Compétences</h2>
             <h3 className='h3 max-w-[455px] mb-16'>
-              Je suis un développeur web et d'application mobile en apprentissage.
+              Je possède une variété de compétences en développement web et d'applications mobiles.
             </h3>
-            <button className='btn btn-sm'>Regarder mon travail</button>
-            
+            <button className='btn btn-sm'>Voir mes projets</button>
           </div>
           <div className='flex-1'>
-            {services.map((service, index) => {
-              const { name, description, link } = service;
+            {skills.map((skill, index) => {
+              const { name, description, icon, link } = skill;
               return (
                 <div className='border-b border-white/20 h-[146px] mb-[38px] flex' key={index}>
                   <div className='max-w-[476px]'>
-                    <h4 className='text-[20px] tracking-wider font-primary font-semibold mb-6'>{name}</h4>
+                    <div className="flex items-center mb-4">
+                      <div className="mr-4"><img src={icon} alt={name} className="skill-icon" /></div>
+                      <h4 className='text-[20px] tracking-wider font-primary font-semibold'>{name}</h4>
+                    </div>
                     <p className='font-secondary leading-tight'>{description}</p>
                   </div>
                   <div className='flex flex-col flex-1 items-end'>
@@ -69,7 +87,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
