@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../assets/logo.jpeg';
 import CV from '../assets/cv.pdf';
-import { FaGithub, FaYoutube, FaDribbble, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const downloadCV = () => {
   const link = document.createElement('a');
@@ -24,15 +24,11 @@ const Header = () => {
           </a>
           <button className='btn btn-sm' onClick={downloadCV}>Télécharger mon CV</button>
           <div className="flex text-[20px] gap-x-6">
-            <a href="#" style={styles.iconLink}>
-              <FaYoutube />
-            </a>
+           
             <a href="https://github.com/Neressoffi" style={styles.iconLink}>
               <FaGithub />
             </a>
-            <a href="#" style={styles.iconLink}>
-              <FaDribbble />
-            </a>
+           
             <a href="https://www.linkedin.com/in/ariel-ngoualem/" style={styles.iconLink}>
               <FaLinkedin />
             </a>

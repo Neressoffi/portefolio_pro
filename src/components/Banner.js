@@ -16,7 +16,7 @@ const Banner = () => {
               initial='hidden'
               animate='show'
               className='text-[55px] font-bold leading-[0.8] lg:text-[110px]'>
-              Ariel<span> Ngoualem</span> {/* Ajoutez un espace après "Ngoualem" */}
+              Ariel<span> Ngoualem</span>
             </motion.h1>
             <motion.div
               variants={fadeIn('up', 0.4)}

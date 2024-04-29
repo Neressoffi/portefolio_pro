@@ -3,7 +3,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
 
-// Importez les images
+// Importation  les d'images
 import HTML5Icon from '../assets/html5-icon.png';
 import CSS3Icon from '../assets/css3-icon.png';
 import JavaScriptIcon from '../assets/javascript-icon.png';
@@ -27,14 +27,14 @@ const skills = [
     icon: JavaScriptIcon,
     link: 'En savoir plus',
   },
-  // Ajoutez d'autres compétences avec leurs images ici
+  // Ajoutez d'images
 ];
 
-const Services = () => {
+const Skills = () => {
   return (
     <motion.section 
       className='section'
-      id='services'
+      id='Skills'
       variants={fadeIn('left', 0.5)} 
       initial='hidden'
       whileInView={'show'}
@@ -91,4 +91,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Skills;
